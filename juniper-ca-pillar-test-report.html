@@ -504,10 +504,129 @@
 
 
   <!-- ══════════════════════════════════════════ -->
-  <!-- SECTION 3: POST COPY                       -->
+  <!-- SECTION 3: CREATIVE GALLERY                -->
   <!-- ══════════════════════════════════════════ -->
   <div class="section">
     <div class="section-label">Section 03</div>
+    <h2>Creative gallery</h2>
+    <p class="section-intro">All 20 ads in the Pillar-Test campaign. Click "Preview" to see the ad exactly as it ran in feed. Sorted by spend. Metrics are for the last 7 days.</p>
+
+    <div id="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;"></div>
+  </div>
+
+  <script>
+  (function(){
+    const ads = [
+      { name:"JUN115 — Car Story B", short:"UGC · 9x16 · 1m+", pillar:"In Journey", pc:"pill-green",
+        spend:"$545", cpp:"$545", cpreg:"$25", hook:"38.9%", hold:"17.4%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQKdaN_zHr8OjVxdeaaBDtk5cdepxzurpc5CFCRwvvrkGvB0U-ruaa5kivv1vou3RZAmjzPwQlhM_kcBWEcH-8NyK1ytRue8wJlGDVRAQYKRzxoIRWHhaUTM4_OaKDBnszrsbnRhnOHsuhlU3V9rnHGasXfILHQ2A284EuTlBLw0-jRVegTEMWajrBmsz6qaY4REETWrvH-nkNB6xqz2x2-JUZtbANxDeLpabg40Oz6TIZO-o8Zsy_Knj1BX9WVFG5KSgyXie4MuQKEACqUB4QvVyLX1mlOdtqj18G85arpneBQTo5xnUKbZ9JdsW4t6_LNmlLTQa_qyLQAt45WZWs25bFeX9u8ddP0BW5b1FCPsF7HGruq9uOFaRvAwa_Gr1iKwTkki8NnmXE73_gd9Olz1TfXs8q4gvidaDyikpX08LTTArpO_Njq7m1kG2ZF5gdI&t=AQJj6UxXJ_XtGnc_JMI" },
+      { name:"JUN145 — Plan Focused A", short:"UGC · 4x5 · 45-60s", pillar:"Pen Isn't The Plan", pc:"pill-blue",
+        spend:"$498", cpp:"$498", cpreg:"$50", hook:"19.6%", hold:"31.9%", hiHold:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLQZ9_oe7iaB3ehY34VI7wUrEUWc-fgRSdkhgV-bRCciGiUE5t0N--BuPza7qhnilAqieY0JbDSI03i1EEktJuOAOMbG9z85O_v-J6FxcES8mGQmgPxoMiRySqNE5mHIXPkfelDVGOiIzIN7Wb3mYnCthniE1P1TgH2h_nwdXA3scBBF9piZobEa_1y6-_J4o0tC_BVZHtgYtXR-eBsP-9qrQ689nqNLpzUMDXqsOvBIrjuoyCoziso2mnKZV_fEcTzAIGpOgqoZJYf_upEU5g7up6gloBC0UAQRae08fy7Qb9KmMGTDL9B-CVu90VR0fS6Ka0xCXrcV067uHUvrqWKo_Xpd_LOKMrfZrdZFPg-xFZpjnA9yDTT9mGB_9RM6jKVwQkbXiThtGpj8NuB1SJDzwc5RaJENLHsTMhdM6YWIet_AJdv0v1n2djy_AJWfPQ&t=AQIbFADL-C7ALma9Ay4" },
+      { name:"JUN144 — Won't Tell You B", short:"UGC · 4x5 · 60s", pillar:"Won't Tell You", pc:"pill-gray",
+        spend:"$393", cpp:"$393", cpreg:"$112", hook:"20.4%", hold:"31.0%", hiHold:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJ7Z08WlRa3k9rrwotRlFHtpxTOWuBy1OUMuU0yxKb6YL4hVJZD_kfWopYhnVdDPV8XoTXi0ed7aIYscrkWfWbJAca2rjW5Kbdj9uvpTFbwineORw4pBvs9UhXC_NKrUWYBvngnaAfw5kw5L2w-Su4xoM-khOBhUXpa3K2qr4wIMWhmObafYZ1sXWCMLRFx3qMbR906ccfVQZYMPjfnTs8Pga-UWbpaRE91X2cmYNHtvqcYqU52KROQfxFFZx-eyIG5g4IclRxndOdIB4WM_L_NI9evllrC5rj25PKgwHmr3rEQPZZKesnGD6_9sx1RD5cE3aFlaN3oW3wLXONdQAaWF-40Uj9nn2-jgepNb1DgGVswgHciQLopaiefqrCETRbGP-riG0y9aGi6vOe7B-EOkRGguIue2L7cdSifVrD9eCuGVt0x2JclJv-oYcIAjDw&t=AQLcRfHhxfnTfBvfOXk" },
+      { name:"JUN117 — Angie Transformation C", short:"UGC · existing footage", pillar:"In Journey", pc:"pill-green",
+        spend:"$243", cpp:"—", cpreg:"$41", hook:"30.9%", hold:"21.1%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQInZC6fV7eW_TtehSf2qUbz_-yvQvdB3nl6hMYFvAMvtXJ5j6Vxa-U0eZbp4ookIhFl-stGf96hJ54J5dWxum2tJNvdOeK_0XmveN8Vy_DjeqGrEMws0TFL8ZdOEHqJSKiIvKZS5rMTmF2UaQg9n9T2HlftLnEJ4NXIvo47ng5EJLEVvsw74BIDVHLd_aoqIDXam2SAZ9nISt6eKyFOeJDlWB8xg99ydAwLK2oXF-LaFpYAvT3XvyXTNZ1VgBm36IN4j_o9yfDkEYVVKYeSAzk-wasQGG_XQcmymnRlEOeRyznX7RukNh01lxpeilaAHLJSRU5hOSh7QybIuxbx7usIzp8ar_VJ20mbKO7-qjfJnR8vYjkuIYH0YhyTFtXni6khkFbQ-Q_G5d2uVcFRysbprLDh-oCdk3UKSU0NFWYKQU4QW1_TILTRCtJXbY1MwTM&t=AQLQov7cUaj8flVpNxI" },
+      { name:"JUN117 — Angie Transformation B", short:"UGC · existing footage", pillar:"In Journey", pc:"pill-green",
+        spend:"$186", cpp:"—", cpreg:"$46", hook:"27.1%", hold:"19.3%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQL7HlSIikuf9gYH-YPyQPHAdGb-UBAdv6fQtBbnk_iqFKScVWwrzj0-37i-UV3NcttjGONjEMZJNMHCj2c5O3f1tasYthM0fLXAwTUQxPVdThFdYZx3KkEMAChz08_5JqKHRlkKmPPbje3xIAeQXTpPszKJ_N4oW6RzRRjLFvEDRXQmWOusToMTGrDZjLaOqUZ-PGHagJqXxqWQfLvtVtX9LF7lkBlL7vNRtBZCghVa7ZgOfYz1G_mYXPOJHtA_W9F4mUMOxdgmn-8CwAG-mKeNU5SoJTpNrZkj-uKVThUhlb9YWawnh_ehEnVT9NCWEgWGWOWBXilQBDvTG40buTbiRHVRhppMpQAPrkFwyOJR9o1M6G9cOD0po8gDlApT7fF1tm6aei5JqcBetevIqpBkuhx1L-o4vhBFfENi_ny3RpQrjX7GREd47hZGCc9VcW0&t=AQKWONLHOAfmASMS998" },
+      { name:"JUN144 — Won't Tell You A", short:"UGC · 4x5 · 60s", pillar:"Won't Tell You", pc:"pill-gray",
+        spend:"$157", cpp:"$315", cpreg:"$79", hook:"18.5%", hold:"29.5%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJY6bMZjSCNG3XjlMfb27tDmRXsaJw8ejM3iYLWFWN7SzdqBrwsHQckwqXftv25-uIaYUitp2oGkE5CoV2NdaoIwrkFsaBmRKaHQ4uwSjd5BhZ9WK1tOB8_PBrA-d1f8m1cPgOKZL5rvKva9imoKIlnMdRfNAqt_pL1sExqNOGTTa2btR1UeM7ZDMYygKexSlECEpiKYFNyLZyAgBVhiRNezc91ftKrTn-0vr6eyTUtH_BIt6pzD1qCyc-MbTs7vtFV5wm2U39dxgBllcT99k37z9y45V9wRmSy8jfUqZUcFzZwAzpnWrR_pJjDAv57zQLVuzTWDpJpI636_6wDWFvIziV5IuDdsP60SAJptJYtFg43ullNxZDkOexGH2uJxnO82U9IU2XnGoChPH41SZBOH7fk3_vxqkXvbnQC8ExQVxoYpyHUfzu3vHkntfCP5Yg&t=AQInKDh8WRBGx6LlABw" },
+      { name:"JUN144 — Won't Tell You D", short:"UGC · 4x5 · 60s", pillar:"Won't Tell You", pc:"pill-gray",
+        spend:"$148", cpp:"—", cpreg:"—", hook:"24.9%", hold:"43.4%", hiHold:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLe7SuO2hP94S4O0Yza6teNQaSCjGRFnGfJbzCVOEpfGPHoYUcnLSCPYSo5OGRgEobrks2aXB5MMwhNcwt9FdKSAohecxJN_ZWZTzmKHjbbDgTetjHH15ybOfSBNFmHP0leTsDnqwvYu6-3gl_6wfmF1n9tyD7K-9cr8owxb1E9cyk1fUn6EvGnkjZ1yR-rP-Ev33d0H2hTIaTHTJ3B-OirnvAY6iRtU3-Pt91Bg-90uy9IJhv1xAGr2Gnlzwnju2T6ur1XJvX0sIv-Y1JeneePbEJ7_85LNU3x2W2aAGp4bxknQRPFMV1fGf3R7ABsVx0nFLOnEc6K-XjQ89x1lALnZvC8BQx2xayBsZ61bu_DMwE1xQVvqQjzBcS55W86hVrD7Kc6cm2Pw6LRBNyYSZHOGQ5TxkRTeYIcjmnX53O2QW6_wHSryYj07_HvXEJ8wSk&t=AQIY4fu3RzGF6DlcS6s" },
+      { name:"JUN143 — Stopped Med C", short:"UGC · 4x5 · 45-60s", pillar:"Treatment Plan", pc:"pill-gray",
+        spend:"$147", cpp:"—", cpreg:"$74", hook:"23.5%", hold:"22.1%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQIKd2L07SVaThEXZIdCrp0mKRjyT8v4_YMd5hrNEmp_boU5aNCdPOddw18J8HfmamfhTax1k4bwS_pktlCgbd_RYhD6VueOVypOXq2Ev7DySjQkrmb_I6r_T2oKVrrkJ-7QadmDB01gQGG6AK7cGbqPHiGPUHNkIgGR2ELwEgi1YPT0t2MQLeu-sdUo5NmdZoXli7vXvL5bBSjlPAWiBqkQ2kouAB5KDxgAg1jOZDCWUi5tlsh97vK-tD6-VquFc5BQ1sqIQ0tZuIZ3YaGXXj-a1QZYD-CJQp0FVZy7Uo2PcJ_BEXINh7sqkEIO4PzHlWluITZebT_KCBXLG0Y2-2Kxl4Qzks90zSBw6GpyUZmKFcaBEQqokXhbldy-GJtGJeFEfDg_QCSD6Y1PtATv2Sbx9MHGryr895sk-oh1t8ppc7DIozw27BIVEr6QgWxN9Ho&t=AQIk2LgJofTfTbL8jQc" },
+      { name:"JUN142 — Regain Fear C", short:"UGC · 4x5 · 60s", pillar:"Regain Fear", pc:"pill-gray",
+        spend:"$141", cpp:"—", cpreg:"$70", hook:"27.1%", hold:"16.7%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQKSbosa2YaqGvwH2IrJDfhQSoeRR39rgWeTxtPI0BXj56EIQTBRB9tRuIETOzyqmp6DbJkver46TwfvVTlBkfu-KXibFFq7DCvguBpDBdq9kEAWOwl6_85aWg_4W2SnPPfd1bUNhLvfubrgxQhZarsWeJ8dy1DlDzrLohfXq2HWxeVkVn_d84lJoIEpk6oMPdujWq-xYiGvNm-F6tFfZrdmnoeqqB6rlPQABBzE3HGbm9PQnxoo0wv150I7K3x2GibwcQuWkUCifY75yomPoYHnpJXsBQaomfniFlXYpzQug4xd3IMK66isG4kwuNEi-b_drb7fhlMvHqZpbhsxD8gqMdzE-7_K1T9rG5Md4z_fc3bwgSsJVFpe0Nvk50G6Bkk2W364pXvRa-13FbMAfMCSZPJxtZUcnl4G3Ml7O8RkYmdV40twXlmiadDombJgEUA&t=AQKUZFfMcehc__WMYFs" },
+      { name:"JUN120 — Statistics C", short:"High-prod · 9x16 · 20-30s", pillar:"Pen Isn't The Plan", pc:"pill-blue",
+        spend:"$103", cpp:"—", cpreg:"$206", hook:"23.6%", hold:"9.8%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLS6imKGyiYdcBQwh2-a8be1orpGPy7lYzUEEMfLrpmSnDp2H0gU7h3Bi6-KuX2A78JUTa0Sqt4YHIYRha3hGYioFeLmYUCWD3O_1KJ8Jr0B496-xZVKj3h0Eu3BChtS1uwf8ATObSIQpdlQz0KeIz5SAl79Oo6stgGe0OWDIjfk0MPpspYRPbfznWJK1xz2SK0cfXrqF87wLIqy1WVllRZ2dRJFWdngTWQfo_yplo8iJLGVeI88paIlUKEQRV6JyvcsqAvFK3O9G49jWztj6JsGy2SDorHsukaesZvxBIJCXgJ4y7JEFItqsYnV1w1QwP8PBF7Bc405DlMKNC6ico86fIvjQ9hfqf88KMOFSu-0J2BArgjNUnDiwXMbhlc05h5zQ6AY-ookohaNxVrXbhB2gQI-soj_x2diqIujn8K9NanKYmfmqwT9iVrGlITjPQ&t=AQJeGq27oA7u7oc3CWo" },
+      { name:"JUN142 — Regain Fear A", short:"UGC · 4x5 · 60s", pillar:"Regain Fear", pc:"pill-gray",
+        spend:"$94", cpp:"—", cpreg:"$188", hook:"27.3%", hold:"16.4%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQIHymFxQECObTIwarwpIq-TyitQ4gehPTlAhGU-hq4WE1-4eswuB-PwFpwUmEQKJ3F5WbR48YKSQPz7R4JsgSk-xDJbHXF9CAFMp51t4ais7_A4cNJPNXg-rIuUgOPPupo-YdiYAwjm_xOIBDs8DNcW6a2udSx0Thk5YqbU2J5Q86pgQ1yRB06y3HcHTWA31KylkGFPS5aWHzbCMBmWQ_bRsX-FBmb9VTD9lawew-tz2qpI9jy2T21udBruBzAX6QTzzd2CfmWtTAJhpDfSFI9aw-XtEeWZkZEVTDc7MJsbvEKg2pDmEysHmt2Z1PPAX0lvg2ONJE3gwiOUhJuEuhce_W4EfWTA4wpOzFdq9qzLAsKpezo_0XWVhErBElcinQ6FhUouf3m077N7qWpIjwXfi-oTFBv65iq0bj-TDbZkF_4nsPPVC_t0cWLwVDqzfjw&t=AQK-s1OfmMnV4YBPRI4" },
+      { name:"CA_JPR027 v5 alt 11", short:"Static · app showcase · 1x1", pillar:"In Journey", pc:"pill-green",
+        spend:"$87", cpp:"—", cpreg:"$173", hook:"—", hold:"—",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLdhJB-jxsjHTjelqCchysgGa-H-cHcdTZyfUViT0n0iSrey_LLAZlB2iX07baWLATYw3Zvi-oVIK7SQNlrpFpFpxX0_JznPkkp9cfI5O0NIBB6Ui0p_d7eYB5RJ77BWRh7lRgtJnfjhNyYiSuZiF5fh-HEgbhOfXyxpHgNO_8aL79XZLUnVixDC9hp3GRtWZUDzp8EX-EOKAQc2xF1Xqpp2huix6CAb-n9Hc7HYt6V7NRNQcC6dpMs510nji_Grc6AlSl6VR6m_ZW0aUCg8RvaADRJ1OsGYvQqx9WrJafQX3Toe1yyL3GBvsYxkRm5oEXo6abqL3gtraaJwZPxgwuTS916V6LDVNp-i-VA8uDj6x7sXmQELDZDxtlgx8p57WKRyxINVnOT-2R1smh8p38BfFaVwBBfLHIytUBb-P1qqe3-ewjiIhs0HKURgK3HR_Y&t=AQIrVI-SYksYpUUB75M" },
+      { name:"JUN116 — Mom of 2 A", short:"UGC · podcast · 4x5 · 120s", pillar:"System Failed You", pc:"pill-amber",
+        spend:"$71", cpp:"$143", cpreg:"$71", hook:"32.4%", hold:"25.1%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLB5y82lsT-rdc5B1ZsXBRIOVQpChrAc1nafTSYRNZ8BNICNTVbPfogN2W3xqKXc30l6UjxQbiKrjMINXFCgL0ju4b2sTB-5iK_6H6E1oQXVta0jwC2uHLfYw2A2369p6FZgb_USNswnGuV15Se2EHU1eXqEeT1qRACtZwIQsRmbAO8Be8WapyMlK_P8dSel1WvVrvCysBT5t_ux65MJqPeaBNbaWBCfc74T4qLBFGInzrhc5VWvGLib2gShzbaaE-pc7wWe1mGb1qNgeYh4_aYBbZRcAQEyBP_fu5gL_PtHZVOQdHjAkdwvlbw6h9mRGlxJWGkPMCBCVO7wEPs7JE3rrcE5OaOATpu2rOqTJ7qYtyBuTHUykvJmBvmJcNhC1zg873_zGcnwoo4Z91Y6iLgzbjYV3WI68ES7BI3HhnRa4AOaXOg3jvou3lUCgHClpg&t=AQJM7pTl1k022gKEPtg" },
+      { name:"Ad 1", short:"Static · unknown format", pillar:"System Failed You", pc:"pill-amber",
+        spend:"$70", cpp:"—", cpreg:"$18", hook:"—", hold:"—",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQIIfLlXGhPX2Bq54Xi8GPG7PRyn347FyunzBGilqCUmkqqky60IFqFbKUgOpMdentO6D4NxVKjeulGVGUGVsSA8bdcIn3FaNNUj4xcr7hn0hBJ3L1IUJUk1QVIx1HYSb8EkC_uKA-q_ApM55Bk1hmvxBEfM9LCYB3wuJUR30MUfbLS_H_vmcHjvDXhI6DSZaasn4UNiP9Yl0j9AxpPQDV980wd-egc3bojtxXIUq0KvK7g5-BqxFCbuNS0iiixEpWXUWRv3PfltohOz4mMP7xbLKl8gBVmXpcrMHq_14KpIAt4Ma3gmesqOsL_eqgKU2eHCW2esr7K8GLClYOj3D_kU3O8Mqy5ppbvp49JXSKVeDutsTJJR-slJaROzZJsM3DRTRQ8rrVCqRGZH0VGAx-wH_D8pLP0rt8DiDKKvmG7IiU-5EEOyDKwe4fd5gvKVzbk&t=AQI_SzOvI7MWnVAcXAo" },
+      { name:"JUN115 — Car Story A", short:"UGC testimonial · 9x16 · 45-60s", pillar:"In Journey", pc:"pill-green",
+        spend:"$51", cpp:"—", cpreg:"$26", hook:"48.8%", hold:"10.6%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQKgcxn_bRsiE6wQQ8v_SY7oyqdXnflttAAGZYHJJ9e5AkqD_RrtCDHOiZN1K_Nt4oDO8fznjhgU9NpX0tnLG8nQHLSdZmZ6GsdrLeJeUIckorABrgUpsn_SzF1b6eM8dVvshoOCdXTB-AXLYKmFEUCYBk7_bNp8ADOQjBYvtjHtWn-VetvrhfdumRQAxJDzvnjj5P7MOdFVO7jixl0DP7cw--UD3v3jh74WHszxZKHi2sDtEG-6zv041C9OMr8p1HjZtJErIgtLCFhnMxVsDQX64wF4H-Yb3rYImCoVz1ygauL1E_-6PcmfVZGxPL2cphlkdc5Uru-8lxfJb71ACHFWevZR2wTFX1fFkJwA4TsAU85J_HOcJN2X9Gf4TYMjGnT1qOVIX9LnZrAq1bSzfJtll-OKtQ_0j7KMPhIoLsdL2iarA_oJFAUJNINccf19f4Y&t=AQKdYZcD533ZWSL_b6U" },
+      { name:"CA_JPR027 v3 alt 3", short:"Static · side-by-side · 1x1", pillar:"Pen Isn't The Plan", pc:"pill-blue",
+        spend:"$48", cpp:"$95", cpreg:"$95", hook:"—", hold:"—",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQIpxZBPVxXiGPBU5lrbmF04MoPjwyw8AOg6hOKDI7BkVJ6Wko6jhnEqITvSMZPTO1cA2gmNj5Xb2KnHFKCUcMO_54uAFlvSMni_jASde-fZt5A7v1rtBo43T_L_9KLMu7B3E2ZCn3Ude4K-EKKKdfHrzjHm-6cvC6zC5nNTzd6wq9zi6IsqhRmSLjtxmeuT7jtf-0TT0ZR554WvayLOfi6TKQHo6-o-ihWbrgEVD44jAjNhxkfkFmipY1XDcctMg3JV4XhWE0-4Aic-GrTfrEBS_El_PkkGW35NmZowCSZHseIeRxCG5D7-jKnplxge8oJvWfuVvbLQCet6GZhOQ055Uk17ScVz1u2fML71ZlkBp95U5KsSdvCtMN9LBZwjyMlGuP0FQa-AYW_AyzbKIwoORiala2vMSqY7gWBg6oMQcE1C0msUOacapp0Rtihp8aA&t=AQKaajIw445VVB_KJSQ" },
+      { name:"JUN143 — Stopped Med B", short:"UGC · 4x5 · 45-60s", pillar:"Treatment Plan", pc:"pill-gray",
+        spend:"$55", cpp:"—", cpreg:"—", hook:"30.7%", hold:"24.4%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJAcn1QD_BdNvFGmowT3NGJypRcG0CEOH4L_9b9Ck3O9_oxr2IV683vWHwpX0JXcwGx8Qfn1rbNXm0WfndRQUMmkK8r0TkFW6lITyixOZJ0090sGM40xGAlfE4hcrdgIoXCl6z8JiOEUhNrwto6WGAVKBb2lS8ACXCD_elonWWeji1ZkTnPo6lVHtUsE5YZniyl014BEs0OYWbCoZ0_CwYesZgA7EH3-Cc1MEpXghxnooxTYeVuajggdn34hNmW0NrPxaP5nKOiie0WYkD9a9_ryLLLJTwbkCNkfq5HPS7reuIzYhcZLi_r78lZ_Uygqd-Eq4egOxo1mDC72F1gPuFyptA4ttRwpAe39HWnJxsfMeT1DwLsV4kKLY5MoUDeTaAURlE2q83IpFjH6eI8asT5kG-i1QXN4WwvQmzDdq1eHKHS9NGvYZrgLEsu9NbnA8w&t=AQJEqkJq_-Rae3u4ha0" },
+      { name:"JUN116 — Mom of 2 B", short:"UGC · podcast · 4x5 · 120s", pillar:"System Failed You", pc:"pill-amber",
+        spend:"$31", cpp:"—", cpreg:"—", hook:"32.5%", hold:"24.0%", hiHook:true,
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQLzHudndNHigjNOmaC4n2ey5lalqhqsehYmMUPNzRdUZUpDDv5nzRf7Y6m2BR2-wCrcqLmr0I9es_9VmtNcT23O1LVTuTGrgun-iCbpVZxN-iBmTDTYp7iewWxmva4BfqXqJmnUjao03ooqetFy_HPqbuMy7Aw0bV_onO9jpQt4AT-RdDLYm6cIbi-1ZvJHIfSrW3fYcjYKXKH7ddkYnUUgD1SYAn7c_ze099LCl-La308G4IEneWebsPoIkiEZi4CmvHV2Q0q5ETXOmqlQiNYwh-Z2Bnnl20b7BOMUzHHk9DzZRX7KMROUmgdcrVg_8ubXavJXWfwu2KVaniIq-YCnnGwk_gvHyoEI52VUk0LsW-cnfTJk9wQQLaQmfbiyR-jeoSFHkehjtLXPROW0e0ysVBZYiyvP0BAeWOCgfaBhTJKH5aGMl40deB3G9grKDEU&t=AQJtyOsmHkvbK_nAkSg" },
+      { name:"JUN115 — Car Story C", short:"UGC · 9x16 · 1m+", pillar:"In Journey", pc:"pill-green",
+        spend:"$34", cpp:"$69", cpreg:"—", hook:"23.5%", hold:"13.2%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJlHwwesZazD2-DKGutL82dbRvGb9t6MX-vuZioXe52G14rpRCAS74YA4s95je7fCxA2Q82YAzyYQIl3HcJYk-1dJihOUV2qjHFFGKkkIG62egdmYAqGqMhKXN98ogQI2LhXPjti63cBXKpMVw1x7T5FNkRfa7qmd8TCvaVF_qsd8Tvsqfc_OsXReDKuClPJc3c8DCYHfzrYds7MEpBVZ1C24FFMW6byqvJ6G_V9Zh4fQJGYNmyCVkR_8zJtKl72BcfIvQS14AwHu8G6ttexSp5tPYlyoGCUJSr9e8JCwmwKg2-bp8A-4WL_c5RcLPX2fLumeGeRwGOC8pyBfVwZzRO1BBWPHOPyfmfQ5kJ02FBWtsGK6y7FmbZFGdt4etuxtgvO8-kMkWA7EbtyBhxxoNX0w5UE5zvZGGXYhiBJLdlXscQbTccXfdCNBtKq7-aJxo&t=AQLMmkEwps2xCt1gtxQ" },
+      { name:"JUN145 — Plan Focused B", short:"UGC · 4x5 · 45-60s", pillar:"Pen Isn't The Plan", pc:"pill-blue",
+        spend:"$26", cpp:"$52", cpreg:"—", hook:"17.6%", hold:"17.4%",
+        url:"https://business.facebook.com/ads/api/preview_iframe.php?d=AQKWu9nRA8LRadGNOjOIp55BjPlQLWuCHUTlUJvvAJJ6503581Gf2ooZWXtUKJR0Olk0j2OKHsIlsmiqmne1YBuAwiT7JwUQ8k190If9W4edvNf_smIc-t1z-Z8U8g75QBVQmdApiwe1ld-dMQCcw2FiiMczheDQ1rjWqMY6KVerApNc-pae0wb6ExyzdxTOrv_oRBSoBcBeqacLGm0QxphAhlQPVnXCRD-3q2ITMjJQ8Gj8wiVXxCghjG97hFQ6OJffGfloqxyySYB3EkQh63JL7Vc_F7p6G1mhzCdrcjtNnR1zrY-ArYrayBAj-fYDKyNI6ZUGx-jlfDz8T_2QanHs2msALqCEF0796tSoLyNrsdTLR_un5VTZQwNFYEUvugEXMUCtMsh8ny8A1r7NO3FB-C9vD8iVuBlHw2BEh7DLsE4bgEPhdfBqFnfkvFz4mqs&t=AQKn_T6Zv4acer-zMK8" }
+    ];
+
+    const grid = document.getElementById('gallery-grid');
+    ads.forEach(ad => {
+      const card = document.createElement('div');
+      card.style.cssText = 'background:#fff;border:1px solid #e0e0db;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px;';
+
+      const topRow = `<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#1a1a1a;line-height:1.3;margin-bottom:3px;">${ad.name}</div>
+          <div style="font-size:11px;color:#aaa;">${ad.short}</div>
+        </div>
+        <span class="pill ${ad.pc}" style="font-size:10px;white-space:nowrap;flex-shrink:0;">${ad.pillar}</span>
+      </div>`;
+
+      const metrics = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+        ${metricCell('Spend', ad.spend)}
+        ${metricCell('CPP', ad.cpp)}
+        ${metricCell('CPReg', ad.cpreg)}
+        ${metricCell('Hook', ad.hook, ad.hiHook)}
+        ${metricCell('Hold', ad.hold, ad.hiHold)}
+        <div style="background:#fafaf8;border-radius:6px;padding:8px;display:flex;align-items:center;justify-content:center;">
+          <a href="${ad.url}" target="_blank" rel="noopener"
+             style="font-size:11px;font-weight:600;color:#1a56ab;text-decoration:none;display:flex;align-items:center;gap:4px;">
+            Preview
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5l7-7M8.5 8.5V1.5H1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>`;
+
+      card.innerHTML = topRow + metrics;
+      grid.appendChild(card);
+    });
+
+    function metricCell(label, val, hi) {
+      const isBlank = !val || val === '—';
+      const color = hi ? '#1a7a3e' : (isBlank ? '#bbb' : '#1a1a1a');
+      return `<div style="background:#fafaf8;border-radius:6px;padding:8px;">
+        <div style="font-size:10px;color:#aaa;margin-bottom:2px;text-transform:uppercase;letter-spacing:.04em;">${label}</div>
+        <div style="font-size:13px;font-weight:${hi?'600':'400'};color:${color};">${isBlank ? '—' : val}</div>
+      </div>`;
+    }
+  })();
+  </script>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SECTION 4: POST COPY                       -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Section 04</div>
     <h2>Post Copy Variants</h2>
     <p class="section-intro">14 copy variants tested across the six pillars. Sorted by spend. Click any row to read the full copy.</p>
 
@@ -537,7 +656,7 @@
   <!-- SECTION 4: CONSUMER PSYCHOLOGY             -->
   <!-- ══════════════════════════════════════════ -->
   <div class="section">
-    <div class="section-label">Section 04</div>
+    <div class="section-label">Section 05</div>
     <h2>Consumer Psychology &amp; Learnings</h2>
     <p class="section-intro">What the performance data reveals about how this audience thinks, where they are in their decision journey, and what moves them to act.</p>
 
@@ -607,7 +726,7 @@
   <!-- SECTION 5: CREATIVE DIRECTION              -->
   <!-- ══════════════════════════════════════════ -->
   <div class="section">
-    <div class="section-label">Section 05</div>
+    <div class="section-label">Section 06</div>
     <h2>Creative Direction &amp; Feedback</h2>
     <p class="section-intro">Specific feedback on what's working, what to fix, and principles for the next round of creative.</p>
 
